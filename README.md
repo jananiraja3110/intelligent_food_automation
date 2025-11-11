@@ -14,7 +14,6 @@ The **Intelligent Food Automation System** is a web-based platform that integrat
 
 ### 🧩 Installation & Setup
 
-```bash
 # Clone and setup environment
 git clone https://github.com/jananiraja3110/intelligent_food_automation
 cd intelligent_food_automation
@@ -24,13 +23,15 @@ source venv/bin/activate   # For Windows: venv\Scripts\activate
 # Install dependencies and run the app
 pip install -r requirements.txt
 
-👤 Default Admin Access
-URL	Email	Password
+**#👤 Default Admin Access**
+
+URL	Email: admin@gmail.com
+Password:admin
 http://localhost:8000
-	admin@gmail.com
-	admin
-👥 User Roles & Permissions
-Role	Capabilities
+
+**#👥 User Roles & Permissions**
+
+**Role	Capabilities**
 Vendor Team	Register, upload (Excel/CSV/raw files), submit requests, track status
 Purchase Team	Process vendor requests, manage procurement, secure file access
 Tech Team	Handle technical requests, system maintenance
@@ -48,7 +49,7 @@ Encrypted Data Storage (at rest and in transit)
 
 Complete Audit Trails for all activities
 
-📁 File Management
+#**📁 File Management**
 Supported File Formats
 
 Excel (.xlsx, .xls)
@@ -62,7 +63,7 @@ Dataset files
 Secure Transfer Workflow
 Upload → AES-256 Encryption → Team Routing → Role-based Access → Audit Logging
 
-🤖 Workflow Automation
+**#🤖 Workflow Automation**
 Request Processing Flow
 Vendor Upload → Auto Encryption → Team Notification → 
 Request Processing → Status Update → Completion Tracking
@@ -77,7 +78,7 @@ Secure team communication
 
 Automated file handling
 
-🧠 Technology Stack
+**#🧠 Technology Stack**
 Category	Tools & Technologies
 Backend	Python 3.9+, Django 4.2+, Django REST Framework
 Database	PostgreSQL (Production), SQLite (Development)
@@ -87,75 +88,11 @@ Visualization	Chart.js
 Security	Django Auth System, Role-based Permissions
 Deployment	Docker, Gunicorn, Nginx
 Version Control	Git & GitHub
-🧱 System Architecture
-User Interface → Django Views → Business Logic → 
-Data Models → Encryption Engine → Database Storage
 
-🌐 Configuration
-Production
 
-Configure PostgreSQL
-
-Set environment variables
-
-Collect static files
-
-Deploy with Gunicorn/Docker/Nginx
-
-Development
-
-Uses SQLite by default
-
-Debug mode enabled
-
-Auto-reload server for testing
-
-🧾 Maintenance & Security
-Regular Tasks
-
-Approve user registrations
-
-Monitor system performance
-
-Run periodic security audits
-
-Verify backups
-
-Best Practices
-
-Keep dependencies updated
-
-Manage encryption keys securely
-
-Monitor access logs regularly
-
-Apply security patches
-
-🔮 Future Enhancements
-
-📱 Mobile application support
-
-🧠 AI-powered analytics dashboard
-
-⛓️ Blockchain integration for traceability
-
-🌾 IoT sensor integration
-
-📊 Advanced reporting tools
-
-🌍 Multi-language support
-
-📚 Support & Documentation
-
-📘 System Documentation: Project Wiki
-
-🧩 Technical Support: GitHub Issues
-
-📧 Contact: jananiraja3110@gmail.com
-
-👩‍💻 Author: Janani Raja
-🌐 GitHub: @jananiraja3110
-📧 Email: jananiraja3110@gmail.com
+#👩‍💻 Author: Janani Raja
+#🌐 GitHub: @jananiraja3110
+#📧 Email: jananiraja3110@gmail.com
 
 
 python manage.py migrate
