@@ -1,0 +1,11 @@
+1. open folder
+
+2. Inside that open intelligent_food_automation folder
+
+3. In patch type cmd and enter
+
+4. In cmd type below command.
+
+venv\Scripts\activate
+
+python manage.py runserver

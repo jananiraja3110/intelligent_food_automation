@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intelligent Food Automation System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            text-align: center;
+        }
+        .hero {
+            padding: 4rem 0;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #fff;
+            color: #667eea;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+        .btn:hover {
+            background: #f8f9fa;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+        .feature {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+        }
+        .feature:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.15);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <h1>TRANSFORMING FOOD PROCESSING THROUGH INTELLIGENT AUTOMATION</h1>
+            <p>Secure, efficient, and intelligent data transfer system for the food processing industry</p>
+            <div>
+                <a href="{% url 'admin:index' %}" class="btn">Admin Login</a>
+                <a href="{% url 'users:login' %}" class="btn">User Login</a>
+                <a href="{% url 'users:register' %}" class="btn">Register</a>
+            </div>
+        </div>
+        
+        <div class="features">
+            <div class="feature">
+                <h3>🔒 Secure Transfers</h3>
+                <p>Military-grade encryption for all file transfers</p>
+            </div>
+            <div class="feature">
+                <h3>👥 Role-Based Access</h3>
+                <p>5 specialized teams with customized permissions</p>
+            </div>
+            <div class="feature">
+                <h3>🤖 Intelligent Processing</h3>
+                <p>AI-powered data validation and routing</p>
+            </div>
+            <div class="feature">
+                <h3>📊 Real-Time Analytics</h3>
+                <p>Comprehensive dashboard and reporting</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

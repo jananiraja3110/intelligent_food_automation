@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Details - Intelligent Food Automation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 2rem;
+        }
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .btn {
+            padding: 0.75rem 1.5rem;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-right: 1rem;
+            margin-bottom: 1rem;
+        }
+        .btn-secondary {
+            background: #6c757d;
+        }
+        .btn-success {
+            background: #28a745;
+        }
+        .btn-danger {
+            background: #dc3545;
+        }
+        .file-info {
+            margin: 1.5rem 0;
+        }
+        .info-row {
+            display: flex;
+            margin-bottom: 0.5rem;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        .info-label {
+            font-weight: bold;
+            width: 150px;
+            color: #333;
+        }
+        .info-value {
+            flex: 1;
+            color: #666;
+        }
+        .security-badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: #28a745;
+            color: white;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-left: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>File Details - Intelligent Food Automation</h1>
+    </div>
+
+    <div class="container">
+        <a href="{% url 'files:file_list' %}" class="btn btn-secondary">Back to Files</a>
+        <a href="{% url 'files:download_file' file.id %}" class="btn">Download File</a>
+
+        <div class="card">
+            <h2>File Information <span class="security-badge">ENCRYPTED & SECURE</span></h2>
+            
+            <div class="file-info">
+                <div class="info-row">
+                    <div class="info-label">Filename:</div>
+                    <div class="info-value">{{ file.original_filename }}</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">File Type:</div>
+                    <div class="info-value">{{ file.get_file_type_display }}</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">File Size:</div>
+                    <div class="info-value">{{ file.file_size|filesizeformat }}</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Uploaded By:</div>
+                    <div class="info-value">{{ file.user.username }}</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Upload Date:</div>
+                    <div class="info-value">{{ file.uploaded_at|date:"M d, Y H:i" }}</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">File ID:</div>
+                    <div class="info-value">{{ file.id }}</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">Security:</div>
+                    <div class="info-value">
+                        <span style="color: #28a745; font-weight: bold;">✓ Military-grade Encryption</span>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 2rem;">
+                <h3>File Actions</h3>
+                <a href="{% url 'files:download_file' file.id %}" class="btn">Download Decrypted File</a>
+                <a href="#" class="btn btn-success">Transfer to Team</a>
+                <a href="#" class="btn btn-danger">Delete File</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Files - Intelligent Food Automation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 2rem;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 2rem;
+        }
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .btn {
+            padding: 0.75rem 1.5rem;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-bottom: 1rem;
+            margin-right: 1rem;
+        }
+        .btn-secondary {
+            background: #6c757d;
+        }
+        .btn-success {
+            background: #28a745;
+        }
+        .file-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        .file-table th, .file-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        .file-table th {
+            background: #f8f9fa;
+            font-weight: bold;
+            color: #333;
+        }
+        .file-table tr:hover {
+            background: #f8f9fa;
+        }
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+            color: #666;
+        }
+        .action-links a {
+            color: #667eea;
+            text-decoration: none;
+            margin-right: 1rem;
+        }
+        .action-links a:hover {
+            text-decoration: underline;
+        }
+        .file-icon {
+            font-size: 1.2rem;
+            margin-right: 0.5rem;
+        }
+        .encrypted-badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            background: #28a745;
+            color: white;
+            border-radius: 3px;
+            font-size: 0.75rem;
+            margin-left: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>My Files - Intelligent Food Automation</h1>
+    </div>
+
+    <div class="container">
+        <a href="{% url 'files:file_upload' %}" class="btn">Upload New File</a>
+        <a href="{% url 'core:dashboard' %}" class="btn btn-secondary">Back to Dashboard</a>
+
+        <div class="card">
+            <h2>Your Encrypted Files</h2>
+            
+            {% if files %}
+            <table class="file-table">
+                <thead>
+                    <tr>
+                        <th>File</th>
+                        <th>Type</th>
+                        <th>Size</th>
+                        <th>Uploaded</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for file in files %}
+                    <tr>
+                        <td>
+                            <span class="file-icon">
+                                {% if file.file_type == 'excel' %}📊
+                                {% elif file.file_type == 'csv' %}📋
+                                {% elif file.file_type == 'raw_material' %}📦
+                                {% elif file.file_type == 'dataset' %}📁
+                                {% else %}📄
+                                {% endif %}
+                            </span>
+                            {{ file.original_filename }}
+                            <span class="encrypted-badge">ENCRYPTED</span>
+                        </td>
+                        <td>{{ file.get_file_type_display }}</td>
+                        <td>{{ file.file_size|filesizeformat }}</td>
+                        <td>{{ file.uploaded_at|date:"M d, Y H:i" }}</td>
+                        <td class="action-links">
+                            <a href="{% url 'files:download_file' file.id %}">Download</a>
+                            <a href="{% url 'files:file_detail' file.id %}">View Details</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% else %}
+            <div class="empty-state">
+                <h3>No files uploaded yet</h3>
+                <p>Upload your first file to get started with secure file transfers.</p>
+                <a href="{% url 'files:file_upload' %}" class="btn btn-success">Upload Your First File</a>
+            </div>
+            {% endif %}
+        </div>
+
+        <!-- File Statistics -->
+        {% if files %}
+        <div class="card" style="margin-top: 2rem;">
+            <h3>File Statistics</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem;">
+                <div style="text-align: center; padding: 1rem; background: #f8f9fa; border-radius: 5px;">
+                    <h4 style="margin: 0; color: #667eea;">Total Files</h4>
+                    <p style="font-size: 1.5rem; font-weight: bold; margin: 0.5rem 0 0 0;">{{ files|length }}</p>
+                </div>
+                <div style="text-align: center; padding: 1rem; background: #f8f9fa; border-radius: 5px;">
+                    <h4 style="margin: 0; color: #28a745;">Total Size</h4>
+                    <p style="font-size: 1.5rem; font-weight: bold; margin: 0.5rem 0 0 0;">
+                        {% widthratio files|length 1 1 %}{# This is a placeholder - you'd need to calculate total size #}
+                    </p>
+                </div>
+                <div style="text-align: center; padding: 1rem; background: #f8f9fa; border-radius: 5px;">
+                    <h4 style="margin: 0; color: #ffc107;">Status</h4>
+                    <p style="font-size: 1.5rem; font-weight: bold; margin: 0.5rem 0 0 0; color: #28a745;">Secure</p>
+                    <small>All files encrypted</small>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
