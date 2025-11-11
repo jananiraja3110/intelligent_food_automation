@@ -1,222 +1,162 @@
-Intelligent Food Automation System
-TRANSFORMING FOOD PROCESSING THROUGH INTELLIGENT AUTOMATION
+# 🍽️ Intelligent Food Automation System  
+### **TRANSFORMING FOOD PROCESSING THROUGH INTELLIGENT AUTOMATION**
 
-A secure Django-based web platform for the food processing industry featuring encrypted data transfer, role-based access control, and automated workflows between cross-functional teams.
+A secure, intelligent, and role-based automation platform built with **Django** for the food processing industry — featuring **encrypted data transfers**, **workflow automation**, and **team collaboration**.
 
-🚀 Quick Start
-Installation & Setup
-bash
+---
+
+## 🚀 Project Overview
+The **Intelligent Food Automation System** is a web-based platform that integrates multiple teams in the food processing pipeline. It ensures **data security**, **workflow transparency**, and **intelligent task automation** using encryption and role-based access management.
+
+---
+
+## ⚙️ Quick Start
+
+### 🧩 Installation & Setup
+
+```bash
 # Clone and setup environment
 git clone https://github.com/jananiraja3110/intelligent_food_automation
 cd intelligent_food_automation
 python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
+source venv/bin/activate   # For Windows: venv\Scripts\activate
 
-# Install dependencies and run
+# Install dependencies and run the app
 pip install -r requirements.txt
-python manage.py migrate
-python manage.py runserver
-Default Admin Access
-URL: http://localhost:8000
 
-Admin Email: admin@gmail.com
-
-Admin Password: admin
-
+👤 Default Admin Access
+URL	Email	Password
+http://localhost:8000
+	admin@gmail.com
+	admin
 👥 User Roles & Permissions
-🔹 Vendor Team
-Register with email/password
-
-Upload files (Excel, CSV, raw materials)
-
-Submit requests to Purchase/Tech teams
-
-Track request status
-
-🔹 Purchase Team
-Register with phone number
-
-Process vendor requests
-
-Manage procurement workflows
-
-Secure file access
-
-🔹 Tech Team
-Technical system oversight
-
-Handle technical requests
-
-System maintenance
-
-🔹 Production Team
-Production data management
-
-Quality control access
-
-Process monitoring
-
-🔹 Admin Team
-Pre-configured administrator
-
-User management & approvals
-
-System-wide oversight
-
+Role	Capabilities
+Vendor Team	Register, upload (Excel/CSV/raw files), submit requests, track status
+Purchase Team	Process vendor requests, manage procurement, secure file access
+Tech Team	Handle technical requests, system maintenance
+Production Team	Manage production data, quality control, monitoring
+Admin Team	Approve users, manage system-wide operations
 🔐 Security Features
+
 Military-grade AES-256 Encryption for all file transfers
 
-Role-Based Access Control with 5 distinct permission levels
+Role-Based Access Control (RBAC) with 5 permission levels
 
-Secure Authentication with admin approval workflows
+Secure Authentication and admin approval workflows
 
-Encrypted Data Storage at rest and in transit
+Encrypted Data Storage (at rest and in transit)
 
-Audit Trail for all system activities
+Complete Audit Trails for all activities
 
 📁 File Management
-Supported Formats
-Excel files (.xlsx, .xls)
+Supported File Formats
 
-CSV files (.csv)
+Excel (.xlsx, .xls)
+
+CSV (.csv)
 
 Raw material data files
 
 Dataset files
 
-Secure Transfer Process
-Upload → Secure file submission
+Secure Transfer Workflow
+Upload → AES-256 Encryption → Team Routing → Role-based Access → Audit Logging
 
-Encryption → Automatic AES-256 encryption
+🤖 Workflow Automation
+Request Processing Flow
+Vendor Upload → Auto Encryption → Team Notification → 
+Request Processing → Status Update → Completion Tracking
 
-Routing → Intelligent team assignment
-
-Access → Role-based file retrieval
-
-Audit → Complete activity logging
-
-🔄 Workflow Automation
-Request Management Flow
-text
-Vendor Upload → Auto-encryption → Team Notification → 
-Request Processing → Status Updates → Completion Tracking
 Automated Features
-Real-time request notifications
 
-Status update alerts
+Real-time request alerts
 
-Secure inter-team communication
+Status change notifications
 
-Automated file processing
+Secure team communication
 
-🏗️ Technology Stack
-Backend
-Python 3.9+ with Django 4.2+
+Automated file handling
 
-PostgreSQL Database
-
-Django REST Framework for APIs
-
-PyCryptodome for encryption
-
-Frontend
-HTML5, CSS3, JavaScript
-
-Bootstrap 5 for responsive UI
-
-Chart.js for data visualization
-
-Security
-AES-256 File Encryption
-
-Django Authentication System
-
-Role-based Permission Management
-
-📊 System Architecture
-text
+🧠 Technology Stack
+Category	Tools & Technologies
+Backend	Python 3.9+, Django 4.2+, Django REST Framework
+Database	PostgreSQL (Production), SQLite (Development)
+Frontend	HTML5, CSS3, JavaScript, Bootstrap 5
+Encryption	PyCryptodome (AES-256)
+Visualization	Chart.js
+Security	Django Auth System, Role-based Permissions
+Deployment	Docker, Gunicorn, Nginx
+Version Control	Git & GitHub
+🧱 System Architecture
 User Interface → Django Views → Business Logic → 
 Data Models → Encryption Engine → Database Storage
-🌐 Key Features
-For Vendors
-Secure file upload portal
 
-Request submission system
+🌐 Configuration
+Production
 
-Real-time status tracking
+Configure PostgreSQL
 
-Encrypted data transfer
+Set environment variables
 
-For Internal Teams
-Role-specific dashboards
+Collect static files
 
-Secure file access
-
-Request management
-
-Team collaboration tools
-
-For Administrators
-User management system
-
-Approval workflows
-
-System monitoring
-
-Security oversight
-
-⚙️ Configuration
-Production Deployment
-PostgreSQL database configuration
-
-Environment variables for security
-
-Static files collection
-
-Gunicorn/Docker deployment options
+Deploy with Gunicorn/Docker/Nginx
 
 Development
-SQLite database (development)
+
+Uses SQLite by default
 
 Debug mode enabled
 
-Automatic reloading
+Auto-reload server for testing
 
-🔧 Maintenance
+🧾 Maintenance & Security
 Regular Tasks
-User account approvals
 
-System performance monitoring
+Approve user registrations
 
-Security audit reviews
+Monitor system performance
 
-Backup verification
+Run periodic security audits
 
-Security Best Practices
-Regular dependency updates
+Verify backups
 
-Encryption key management
+Best Practices
 
-Access log monitoring
+Keep dependencies updated
 
-Security patch implementation
+Manage encryption keys securely
 
-📞 Support & Documentation
-System Documentation: Project Wiki
+Monitor access logs regularly
 
-Technical Support: GitHub Issues
+Apply security patches
 
-Contact: jananiraja3110@gmail.com
+🔮 Future Enhancements
 
-🚀 Future Enhancements
-Mobile application development
+📱 Mobile application support
 
-AI-powered analytics dashboard
+🧠 AI-powered analytics dashboard
 
-Blockchain integration
+⛓️ Blockchain integration for traceability
 
-IoT sensor data integration
+🌾 IoT sensor integration
 
-Advanced reporting tools
+📊 Advanced reporting tools
 
-Multi-language support
+🌍 Multi-language support
+
+📚 Support & Documentation
+
+📘 System Documentation: Project Wiki
+
+🧩 Technical Support: GitHub Issues
+
+📧 Contact: jananiraja3110@gmail.com
+
+👩‍💻 Author: Janani Raja
+🌐 GitHub: @jananiraja3110
+📧 Email: jananiraja3110@gmail.com
+
+
+python manage.py migrate
+python manage.py runserver
