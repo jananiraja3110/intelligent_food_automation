@@ -49,7 +49,7 @@ Encrypted Data Storage (at rest and in transit)
 
 Complete Audit Trails for all activities
 
-#**📁 File Management**
+##**📁 File Management**
 Supported File Formats
 
 Excel (.xlsx, .xls)
@@ -91,9 +91,13 @@ Version Control	Git & GitHub
 
 
 #👩‍💻 Author: Janani Raja
+
 #🌐 GitHub: @jananiraja3110
+
 #📧 Email: jananiraja3110@gmail.com
 
+#RUN
 
 python manage.py migrate
+
 python manage.py runserver
